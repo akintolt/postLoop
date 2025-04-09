@@ -8,16 +8,15 @@ services:
     depends_on:
       - frontend
     networks:
-      - gradely-net
+      - app-net
 
   frontend:
     build: ./frontend
     ports:
       - "3000:3000"
     networks:
-      - gradely-net
+      - app-net
 
 networks:
-  gradely-net:
+  app-net:
     driver: bridge
-
